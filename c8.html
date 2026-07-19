@@ -30,9 +30,9 @@
             const name=document.getElementById("name").value;
             const nameRegex=/^[A-Za-z]+$/
             const email=document.getElementById("email").value;
-            const emailRegex=/[^/s@]+@[^/s@]+\.[^/s@]/
+            const emailRegex=/[^\s@]+@[^\s@]+\.[^\s@]/
             const password=document.getElementById("password").value;
-            const passwordRegex=/(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}/
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/;
 
             if(!nameRegex.test(name)){
                 alert("Enter valid name")
