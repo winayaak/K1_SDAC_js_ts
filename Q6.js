@@ -1,16 +1,23 @@
-function payment(status){
-    return new Promise(resolve,reject)
-    if (status) {
-        resolve("payment recevied..")
-        
-    } else {
-        reject("Payment not received")
+function payment(amount){
+    return new Promise((resolve, reject) => {
+        if(amount){
+            resolve("ok")
+        }
+        else{
+            reject("no")
+        }
+    });
+}
+async function order(){
+    try{
+        const result=await payment(100)
+        if(result){
+                console.log(result);
+        }
         
     }
+catch(error){
+    console.error(error);
 }
-payment(true).then((result) => {
-        console.log(result)    
-}).catch((err) => {
-    console.log(err);
-    
-});
+}
+order()
