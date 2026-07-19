@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td><h1>Name</h1></td>
+            <td><input type="text" id="name" placeholder="enter name"></td>
+        </tr>
+        <tr>
+            <td><h1>Email</h1></td>
+            <td><input type="email" id="email" placeholder="enter email"></td>
+        </tr>
+        <tr>
+            <td><h1>Password</h1></td>
+            <td><input type="password" id="password" placeholder="enter password"></td>
+        </tr>
+         <tr>
+            <td></td>
+            <td><button id="b1">SUBMIT</button></td>
+        </tr>
+    </table>
+    <script>
+        const b1=document.getElementById("b1");
+        b1.addEventListener("click",()=>{
+            const name=document.getElementById("name").value;
+            const nameRegex=/^[A-Za-z]+$/
+            const email=document.getElementById("email").value;
+            const emailRegex=/[^/s@]+@[^/s@]+\.[^/s@]/
+            const password=document.getElementById("password").value;
+            const passwordRegex=/(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}/
+
+            if(!nameRegex.test(name)){
+                alert("Enter valid name")
+            }
+            else if(!emailRegex.test(email)){
+                alert("enter valid email")
+            }
+            else if(!passwordRegex.test(password)){
+                alert("Enter valid passoword")
+            }
+            else{
+                alert("sucess.")
+            }
+        })
+    </script>
+</body>
+</html>

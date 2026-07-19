@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button id="b1">ADD</button>
+    <ul id="ul">
+        <li>Phone</li>
+        <li>Smart Phone</li>
+        <li>HeadPhone</li>
+    </ul>
+    <script>
+        const b1=document.getElementById("b1");
+        b1.addEventListener("click",()=>{
+            const inp=document.getElementById("inp").value;
+            const ul=document.getElementById("ul");
+            const li= document.createElement("li")
+            li.textContent=inp
+            ul.append(li)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Customer Name</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" id="email"></td>
+        </tr>
+        <tr>
+            <td>Product Query</td>
+            <td><input type="text" id="Query"></td>
+        </tr>
+         <tr>
+            <td></td>
+            <td><button id="=b1">SUBMIT</button></td>
+        </tr>
+    </table>
+
+    <script>
+        const b1= document.getElementById("b1");
+        b1.addEventListener("click",()=>{
+            const name=document.getElementById("name").value;
+            const email=document.getElementById("email").value;
+            const Query=document.getElementById("Query").value;
+            const emailRegex=/[^/s@]+@[^/s@]+\.[A-Za-z]+/;
+
+
+            if (name=="") {
+                alert("Enter the name")
+                
+            }
+            else if(!emailRegex.test(email)){
+                alert("Enter valid email")
+            }
+            else{
+                localStorage.setItem("name",name);
+                localStorage.setItem("email",email);
+                localStorage.setItem("Query",Query);
+                alert("success..")
+            }
+        })
+    </script>
+</body>
+</html>
